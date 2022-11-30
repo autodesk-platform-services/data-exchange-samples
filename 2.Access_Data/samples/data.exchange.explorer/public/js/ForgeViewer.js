@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Written by APS Partner Development
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -23,13 +23,13 @@ var viewer;
 function launchViewer(urn, viewableId) {
     var options = {
         env: 'AutodeskProduction',
-        getAccessToken: getForgeToken,
+        getAccessToken: getAPSToken,
         api: 'derivativeV2' + (atob(urn.replace('_', '/')).indexOf('emea') > -1 ? '_EU' : '') // handle BIM 360 US and EU regions
     };
 
-    document.getElementById('forgeViewer').innerHTML="";
+    document.getElementById('apsViewer').innerHTML="";
     Autodesk.Viewing.Initializer(options, () => {
-        viewer = new Autodesk.Viewing.GuiViewer3D(document.getElementById('forgeViewer'));
+        viewer = new Autodesk.Viewing.GuiViewer3D(document.getElementById('apsViewer'));
         viewer.start();
         viewer.setTheme('light-theme');
         var documentId = 'urn:' + urn;
@@ -42,7 +42,7 @@ function launchViewer(urn, viewableId) {
         viewer.loadDocumentNode(doc, viewables).then(i => {
             const curSel = window.currentSelection.split('/');
             jQuery.ajax({
-                url: `/api/forge/dataexchange/getitem?projectid=${curSel[6]}&itemid=${curSel[8]}`,
+                url: `/api/aps/dataexchange/getitem?projectid=${curSel[6]}&itemid=${curSel[8]}`,
                 success: function (data) {
                     if (data.isfdx) {
                         viewer.loadExtension('FDX_Explorer')
@@ -58,8 +58,8 @@ function launchViewer(urn, viewableId) {
     }
 }
 
-function getForgeToken(callback) {
-    fetch('/api/forge/oauth/token').then(res => {
+function getAPSToken(callback) {
+    fetch('/api/aps/oauth/token').then(res => {
         res.json().then(data => {
             callback(data.access_token, data.expires_in);
         });

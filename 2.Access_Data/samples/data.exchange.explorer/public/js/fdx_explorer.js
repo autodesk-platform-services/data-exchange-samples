@@ -37,7 +37,7 @@ class FDX_Explorer extends Autodesk.Viewing.Extension {
 
     getExchangeContainerInfo(exchangeFileUrn) {
         console.log("FETCHING EXCHANGE INFO using ", exchangeFileUrn);
-        fetch(`/api/forge/dataexchange/getexchange?exchangefileurn=${exchangeFileUrn}`)
+        fetch(`/api/aps/dataexchange/getexchange?exchangefileurn=${exchangeFileUrn}`)
             .then(result => result.json())
             .then(data => {
                 this.exchangeInfo = data;
@@ -49,7 +49,7 @@ class FDX_Explorer extends Autodesk.Viewing.Extension {
 
     getExchangeContainerStats(collectionid, exchangeid) {
         console.log("FETCHING Data using ", this.exchangeInfo);
-        fetch(`/api/forge/dataexchange/getexchangestats?collectionid=${collectionid}&exchangeid=${exchangeid}`)
+        fetch(`/api/aps/dataexchange/getexchangestats?collectionid=${collectionid}&exchangeid=${exchangeid}`)
             .then(result => result.json())
             .then(data => {
                 this.exchangeStats = data;
@@ -138,7 +138,7 @@ class FDX_Explorer extends Autodesk.Viewing.Extension {
 
     addRevitFileNameToPanel(projectUrn, sourceFileUrn, filename, version) {
         console.log("Getting info for item: ", sourceFileUrn);
-        fetch(`/api/forge/dataexchange/getitemname?projectid=${projectUrn}&itemid=${sourceFileUrn}`)
+        fetch(`/api/aps/dataexchange/getitemname?projectid=${projectUrn}&itemid=${sourceFileUrn}`)
             .then(result => result.json())
             .then(data => {
                 this._exchangeInfoPanel.addProperty("SourceRevitFile", data.name + ` [v${version}]`, filename);
@@ -271,7 +271,7 @@ class FDX_Explorer extends Autodesk.Viewing.Extension {
 
     download_assets_n_relationships() {
         // console.log("Downloading based on ",this.exchangeInfo[0].collection.id, this.exchangeInfo[0].id);
-        fetch(`/api/forge/dataexchange/downloadexchange?collectionid=${this.exchangeInfo[0].collection.id}&exchangeid=${this.exchangeInfo[0].id}`)
+        fetch(`/api/aps/dataexchange/downloadexchange?collectionid=${this.exchangeInfo[0].collection.id}&exchangeid=${this.exchangeInfo[0].id}`)
             .then(result => result.json())
             .then(data => {
                 let json = JSON.stringify(data);

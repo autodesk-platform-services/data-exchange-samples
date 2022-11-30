@@ -63,7 +63,7 @@ The above call gives you a response similar to the following:
 
 In this response payload, you are interested in the `id` of the needed hub. 
 
-Note that certain Forge Apps can be provisioned in multiple accounts. 
+Note that certain APS Apps can be provisioned in multiple accounts. 
 Such, after retrieving the hubs, it's important to make sure the needed Hub ID is identified from the list of accessible hubs.
 
 

@@ -11,7 +11,7 @@ There are two samples illustrating the use of the Data Extension API explored in
     
     ![](././data.exchange.downloader/img/screenshot.png)
     
-2. [data.exchange.explorer](./data.exchange.explorer) - a more complex web app extending the sample (with the same name) from Tutorial #1 sample pack. Added the ability to get the stats on assets and relationships related to visualized exchange in the Forge Viewer context, as well as download them for further client side processing:
+2. [data.exchange.explorer](./data.exchange.explorer) - a more complex web app extending the sample (with the same name) from Tutorial #1 sample pack. Added the ability to get the stats on assets and relationships related to visualized exchange in the APS Viewer context, as well as download them for further client side processing:
 
     ![](./data.exchange.explorer/img/screenshot.png)
 
@@ -19,7 +19,7 @@ There are two samples illustrating the use of the Data Extension API explored in
 
 ## Prerequisites
 
-1. **Forge Account:** Learn how to create a Forge Account, activate subscription, and create an app in [this tutorial](http://learnforge.autodesk.io/#/account/):
+1. **APS Account:** Learn how to create a APS Account, activate subscription, and create an app in [this tutorial](http://learnforge.autodesk.io/#/account/):
     
    - Since the exchange data is located within Autodesk Construction Cloud, a three-legged `data:read` token is required.
 
@@ -31,4 +31,4 @@ These samples are licensed under the terms of the [MIT License](http://opensourc
 
 ## Written by
 
-Denis Grigor [denis.grigor@autodesk.com](denis.grigor@autodesk.com), [Forge Partner Development](http://forge.autodesk.com)
+Denis Grigor [denis.grigor@autodesk.com](denis.grigor@autodesk.com), [APS Partner Development](http://forge.autodesk.com)

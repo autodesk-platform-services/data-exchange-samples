@@ -29,7 +29,7 @@ class FDX_Explorer extends Autodesk.Viewing.Extension {
 
     getExchangeContainerInfo(exchangeFileUrn) {
         console.log("FETCHING EXCHANGE INFO using ", exchangeFileUrn);
-        fetch(`/api/forge/dataexchange/getexchange?exchangefileurn=${exchangeFileUrn}`)
+        fetch(`/api/aps/dataexchange/getexchange?exchangefileurn=${exchangeFileUrn}`)
             .then(result => result.json())
             .then(data => {
                 this.exchangeInfo = data;
@@ -90,7 +90,7 @@ class FDX_Explorer extends Autodesk.Viewing.Extension {
 
     addRevitFileNameToPanel(projectUrn, sourceFileUrn, filename, version){
         console.log("Getting info for item: ", sourceFileUrn);
-        fetch(`/api/forge/dataexchange/getitemname?projectid=${projectUrn}&itemid=${sourceFileUrn}`)
+        fetch(`/api/aps/dataexchange/getitemname?projectid=${projectUrn}&itemid=${sourceFileUrn}`)
             .then(result => result.json())
             .then(data => {
                 this._panel.addProperty("SourceRevitFile", data.name+ ` [v${version}]`, filename );
