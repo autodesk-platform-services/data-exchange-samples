@@ -4,7 +4,7 @@
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://opensource.org/licenses/MIT)
 ![Basic](https://img.shields.io/badge/Level-Basic-green.svg)
 
-**Forge API:** [![Data Exchange](https://img.shields.io/badge/Data%20Exchange-Beta-orange)](http://developer.autodesk.com/)
+**Autodesk Platform Services API:** [![Data Exchange](https://img.shields.io/badge/Data%20Exchange-Beta-orange)](http://developer.autodesk.com/)
 
 ## Description
 
@@ -14,11 +14,11 @@ This sample is a CLI app illustrating how, using the `item id` related to an exc
 
 ### Prerequisites
 
-1. **Forge Account:** Learn how to create a Forge Account, activate subscription and create an app at [this tutorial](http://learnforge.autodesk.io/#/account/).
+1. **APS Account:** Learn how to create a APS Account, activate subscription and create an app at [this tutorial](http://learnforge.autodesk.io/#/account/).
 2. **NodeJs:** [version 8 or newer](https://nodejs.org).
 
 For using this sample, you will need an Autodesk developer credentials. 
-Visit the [Forge Developer Portal](https://developer.autodesk.com), sign up for an account, 
+Visit the [Autodesk Platform Services Developer Portal](https://developer.autodesk.com), sign up for an account, 
 and [create an app](https://developer.autodesk.com/myapps/create).
 
 **NOTE:** To simplify the sample, since it requires a 3-legged authentication, it was stripped of the authentication part (requiring to open a browser) 
@@ -60,4 +60,4 @@ This sample is licensed under the terms of the [MIT License](http://opensource.o
 
 ## Written by
 
-[Forge Partner Development](http://forge.autodesk.com)
+[Autodesk Platform Services Partner Development](http://forge.autodesk.com)

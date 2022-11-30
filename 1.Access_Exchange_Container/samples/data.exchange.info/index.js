@@ -15,10 +15,10 @@ if (exchangefileUrn === undefined) {
 
 console.log("Getting exchange container for", exchangefileUrn)
 
-let myForgeApp = new MyApp(
+let myAPSApp = new MyApp(
     TOKEN,
 );
 
-let exchanges = await myForgeApp.getExchanges(exchangefileUrn);
-let result = await myForgeApp.format(exchanges);
+let exchanges = await myAPSApp.getExchanges(exchangefileUrn);
+let result = await myAPSApp.format(exchanges);
 console.log(result);

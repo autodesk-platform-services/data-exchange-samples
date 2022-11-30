@@ -201,7 +201,7 @@ In the above payload, we can notice that the provided assets can be divided into
 - **MODIFY** - indicates that the asset was present in the previous revision, but some data was changed;
 - **REMOVE** - indicates that the asset no longer exists when compared with the previous revision.
 
-**NOTE:** In Forge Data Exchange context, all entities have a `revisionId` field which helps to keep track of different versions of the entity. For example, in case an asset with a certain ID goes through some changes, it will be assigned another revisionId which can be interpreted as having two versions of the same asset, each holding info specific to their version.
+**NOTE:** In Autodesk Platform Services (APS) Data Exchange context, all entities have a `revisionId` field which helps to keep track of different versions of the entity. For example, in case an asset with a certain ID goes through some changes, it will be assigned another revisionId which can be interpreted as having two versions of the same asset, each holding info specific to their version.
 
 The same concept is valid when retrieving the relationships. Such, a call as the following:
 

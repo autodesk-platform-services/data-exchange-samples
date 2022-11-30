@@ -15,19 +15,19 @@ if (exchangefileUrn === undefined) {
 
 console.log("Getting exchange container for", exchangefileUrn)
 
-let myForgeApp = new MyApp(
+let myAPSApp = new MyApp(
     TOKEN,
 );
 
-let exchange = await myForgeApp.getExchange(exchangefileUrn);
-let relationships = await myForgeApp.getAllRelationships(exchange.collection.id, exchange.id);
-let assets = await myForgeApp.getAllAssets(exchange.collection.id, exchange.id);
-let stats = myForgeApp.analyseData(assets, relationships);
+let exchange = await myAPSApp.getExchange(exchangefileUrn);
+let relationships = await myAPSApp.getAllRelationships(exchange.collection.id, exchange.id);
+let assets = await myAPSApp.getAllAssets(exchange.collection.id, exchange.id);
+let stats = myAPSApp.analyseData(assets, relationships);
 
-let result = await myForgeApp.format(exchange, stats);
+let result = await myAPSApp.format(exchange, stats);
 console.log(result);
-myForgeApp.saveRelationships(exchange.id, relationships);
-myForgeApp.saveAssets(exchange.id, assets);
+myAPSApp.saveRelationships(exchange.id, relationships);
+myAPSApp.saveAssets(exchange.id, assets);
 
 
 
@@ -41,17 +41,17 @@ myForgeApp.saveAssets(exchange.id, assets);
 //         {"fileName": exchange.components.data.insert["autodesk.fdx:host.acc-1.0.0"].host.String.fileName},
 //         {"id": exchange.id},
 //         {"collectionId": exchange.collection.id},
-//         {"exchangeFileUrn": myForgeApp.getAttributeMapForEntity(exchange)["exchangeFileUrn"].value}
+//         {"exchangeFileUrn": myAPSApp.getAttributeMapForEntity(exchange)["exchangeFileUrn"].value}
 //     )
 //
 //     let showResults = async() => {
-//         let relationships = await myForgeApp.getAllRelationships(exchange.collection.id, exchange.id);
-//         let assets = await myForgeApp.getAllAssets(exchange.collection.id, exchange.id);
-//         myForgeApp.saveRelationships(exchange.id, relationships);
-//         myForgeApp.saveAssets(exchange.id, assets);
+//         let relationships = await myAPSApp.getAllRelationships(exchange.collection.id, exchange.id);
+//         let assets = await myAPSApp.getAllAssets(exchange.collection.id, exchange.id);
+//         myAPSApp.saveRelationships(exchange.id, relationships);
+//         myAPSApp.saveAssets(exchange.id, assets);
 //         console.log(`Data saved as JSON in "./${exchange.id}" folder`);
 //         console.log(`\nStats on saved data:`);
-//         return myForgeApp.analyseData(assets, relationships);
+//         return myAPSApp.analyseData(assets, relationships);
 //     }
 //
 //     showResults().then( result => {

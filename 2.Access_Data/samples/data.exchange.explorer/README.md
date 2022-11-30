@@ -15,7 +15,7 @@
 
 ## Description
 
-This sample is extending the sample (of the same name) from Tutorial #1 sample pack. Added the ability to get the stats on assets and relationships related to visualized exchange in Forge Viewer context, as well as download them for further client-side processing.
+This sample is extending the sample (of the same name) from Tutorial #1 sample pack. Added the ability to get the stats on assets and relationships related to visualized exchange in APS Viewer context, as well as download them for further client-side processing.
 
 Mainly these two files were changed:
 
@@ -28,12 +28,12 @@ Mainly these two files were changed:
 
 ### Prerequisites
 
-1. **Forge Account:** Learn how to create a Forge Account, activate subscription, and create an app in [this tutorial](http://learnforge.autodesk.io/#/account/). 
+1. **APS Account:** Learn how to create a APS Account, activate subscription, and create an app in [this tutorial](http://learnforge.autodesk.io/#/account/). 
 2. **Visual Code:** Visual Code (Windows or MacOS).
 3. **JavaScript ES6:** Syntax for server-side.
 4. **JavaScript:** Basic knowledge with **jQuery**.
 
-To use this sample, you will need an Autodesk developer credentials. Visit the [Forge Developer Portal](https://developer.autodesk.com), sign up for an account, and [create an app](https://developer.autodesk.com/myapps/create). For this new app, use **http://localhost:3000/api/forge/callback/oauth** as the Callback URL; although, it's not used on a 2-legged flow. Finally, take note of the **Client ID** and **Client Secret**.
+To use this sample, you will need an Autodesk developer credentials. Visit the [Autodesk Platform Services Developer Portal](https://developer.autodesk.com), sign up for an account, and [create an app](https://developer.autodesk.com/myapps/create). For this new app, use **http://localhost:3000/api/aps/callback/oauth** as the Callback URL; although, it's not used on a 2-legged flow. Finally, take note of the **Client ID** and **Client Secret**.
 
 ### Running locally
 
@@ -48,24 +48,24 @@ To run it, install the required packages, set the enviroment variables with your
 Mac OSX/Linux (Terminal):
 
     npm install
-    export FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
-    export FORGE_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
-    export FORGE_CALLBACK_URL=<<YOUR CALLBACK URL>>
+    export APS_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
+    export APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
+    export APS_CALLBACK_URL=<<YOUR CALLBACK URL>>
     npm start
 
 Windows (use **Node.js command line** from Start menu):
 
     npm install
-    set FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
-    set FORGE_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
-    set FORGE_CALLBACK_URL=<<YOUR CALLBACK URL>>
+    set APS_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
+    set APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
+    set APS_CALLBACK_URL=<<YOUR CALLBACK URL>>
     npm start
 
 Open the browser: [http://localhost:3000](http://localhost:3000).
 
 ### Packages used
 
-The [Autodesk Forge](https://www.npmjs.com/package/forge-apis) packages are included by default. Some other non-Autodesk packages are also used, including [express](https://www.npmjs.com/package/express) and [multer](https://www.npmjs.com/package/multer) for upload operations.
+The [Autodesk Platform Services (APS)](https://www.npmjs.com/package/forge-apis) packages are included by default. Some other non-Autodesk packages are also used, including [express](https://www.npmjs.com/package/express) and [multer](https://www.npmjs.com/package/multer) for upload operations.
 
 ## Further Reading
 
@@ -99,4 +99,4 @@ This sample is licensed under the terms of the [MIT License](http://opensource.o
 
 ## Written by
 
-Petr Broz [@petrbroz](https://twitter.com/petrbroz), [Forge Partner Development](http://forge.autodesk.com)
+Petr Broz [@petrbroz](https://twitter.com/petrbroz), [Autodesk Platform Services Partner Development](http://forge.autodesk.com)
